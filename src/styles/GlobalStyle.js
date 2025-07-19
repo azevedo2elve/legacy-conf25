@@ -1,15 +1,15 @@
-import { createGlobalStyle } from "styled-components";
+import { createGlobalStyle } from 'styled-components'
 
 export const GlobalStyle = createGlobalStyle`
   * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Helvetica', sans-serif;
+    font-family: "Poppins", sans-serif;
   }
 
   body {
-    background: ${({theme}) => theme.colors.backgroundGradient};
+    background: ${({ theme }) => theme.colors.backgroundGradient};
     color: white;
     min-height: 100vh;
   }
@@ -18,4 +18,4 @@ export const GlobalStyle = createGlobalStyle`
     color: inherit;
     text-decoration: none;
   }
-`;
+`
