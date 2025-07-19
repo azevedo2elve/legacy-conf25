@@ -1,4 +1,5 @@
 import Nav from './components/Nav'
+import Hero from './components/Hero'
 
 import styled from 'styled-components'
 import { GlobalStyle } from './styles/GlobalStyle'
@@ -21,6 +22,7 @@ function App() {
     <>
       <GlobalStyle />
       <Nav />
+      <Hero />
       <Container>
         <Title>LEGACY CONF25</Title>
       </Container>
