@@ -34,27 +34,38 @@ const TitleLegacy = styled.h1`
   font-size: 5.5rem;
   letter-spacing: 1.1rem;
 `
+const MockupWrapper = styled.div`
+  position: relative;
+  min-width: 25rem;
+  height: 72%;
+  z-index: 2;
+`
 
 const Mockup = styled.img`
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  height: 98%;
+
   max-width: 25rem;
-  height: auto;
-  z-index: 2;
+  z-index: 3;
 `
 
 const VideoContainer = styled.div`
   position: absolute;
-  width: 24rem;
-  height: 50rem;
-  top: 57%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  top: 2%; // ajuste fino conforme o mockup
+  left: 5%; // ajuste fino conforme o mockup
+  width: 90%; // ocupa proporcional ao mockup
+  height: 95%; // idem
   z-index: 1;
 
   video {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border-radius: 4rem;
+    border-radius: 2.8rem; // ajuste conforme o mockup
   }
 `
 
@@ -119,18 +130,19 @@ const Legacy = () => {
     <StoryWrapper id="legacy">
       <TitleLegacy>WE ARE LEGACY</TitleLegacy>
 
-      <VideoContainer ref={containerRef}>
-        <video
-          key={videos[index]}
-          ref={videoRef}
-          controls={false}
-          onEnded={handleNext}
-        >
-          <source src={videos[index]} type="video/mp4" />
-        </video>
-      </VideoContainer>
-
-      <Mockup src={iphoneMockup} alt="iPhone Mockup" />
+      <MockupWrapper ref={containerRef}>
+        <VideoContainer>
+          <video
+            key={videos[index]}
+            ref={videoRef}
+            controls={false}
+            onEnded={handleNext}
+          >
+            <source src={videos[index]} type="video/mp4" />
+          </video>
+        </VideoContainer>
+        <Mockup src={iphoneMockup} alt="iPhone Mockup" />
+      </MockupWrapper>
 
       <LeftZone onClick={handlePrev} />
       <RightZone onClick={handleNext} />
