@@ -1,5 +1,5 @@
 import Nav from './components/Nav'
-import Hero from './components/Hero'
+import Hero from './components/Hero/Hero'
 
 import styled from 'styled-components'
 import { GlobalStyle } from './styles/GlobalStyle'

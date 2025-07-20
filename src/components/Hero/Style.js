@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-import Backgroud from '../assets/hero/Fundo-1200x780.png'
+import Backgroud from '../../assets/hero/Fundo-1200x780.png'
 
 const Container = styled.section`
   width: 100%;
@@ -23,16 +23,19 @@ const Image = styled.img`
 `
 
 const Button = styled.a`
-  margin-top: 2rem;
+  display: flex;
+  align-items: center;
+  margin: 5rem 0;
   padding: 0.75rem 1.5rem;
   background: ${({ theme }) => theme.colors.greenButton};
-  border-radius: 30px;
-  font-weight: bold;
-  color: ${({ theme }) => theme.colors.darkText};
+  border-radius: 5rem;
+  font-weight: 600;
+  color: ${({ theme }) => theme.colors.accentBlue};
   text-decoration: none;
-  font-size: 1rem;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  font-size: 3rem;
+  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.2);
   transition: transform 0.2s ease;
+  padding: 1rem 2rem;
 
   &:hover {
     transform: scale(1.05);

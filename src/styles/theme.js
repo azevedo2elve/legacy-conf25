@@ -1,18 +1,17 @@
 export const theme = {
   colors: {
     backgroundMain: '#8000D6', // Roxo vibrante
-    backgroundGradient: 'linear-gradient(135deg, #db4f2f, #ba4bc1, #3f25b8)',
+    backgroundGradient: 'linear-gradient(360deg ,#db4f2f, #ba4bc1, #3f25b8)',
 
     textLight: '#FFFFF', // Texto branco
     textDark: '#111111', // Para uso em fundos claros
-    textMuted: '#DDA6FF', // Lilás claro para textos menos importantes
 
     // paleta de cores
     accentOrange: '#db4f2f',
     accentPink: '#ba4bc1',
     accentBlue: '#080253',
 
-    neonGreen: '#5EFF3C', // Faixa ESTADUAL
+    greenButton: '#62D900', // Button Garanta seu ingresso
     highlightYellow: '#E3B435', // Número "25"
 
     overlay: 'rgba(0, 0, 0, 0.4)', // Para sobrepor imagem de fundo com transparência
@@ -32,8 +31,8 @@ export const theme = {
   },
 
   borderRadius: {
-    sm: '6px',
-    md: '12px',
-    full: '999px',
+    sm: '.6rem',
+    md: '.12rem',
+    full: '.999rem',
   },
 }
