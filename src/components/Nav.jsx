@@ -1,8 +1,8 @@
 import styled from 'styled-components'
 
 // images
-import logo from '../assets/logo-legacy.png'
-import lagoinhaCanoas from '../assets/lagoinha-canoas.svg'
+import logo from '../assets/logo/Logo-conf.png'
+import lagoinhaCanoas from '../assets/logo/lagoinha-canoas.svg'
 
 const NavBar = styled.nav`
   position: fixed;
@@ -31,8 +31,8 @@ const NavDiv = styled.div`
   height: 100%;
   gap: 1.5rem;
   padding: 0 2rem;
-  border-left: 0.2rem solid white;
-  border-right: 0.2rem solid white;
+  border-left: 0.2rem solid #3f25b8;
+  border-right: 0.2rem solid #3f25b8;
 `
 
 const NavItem = styled.a`

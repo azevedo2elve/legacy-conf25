@@ -41,4 +41,44 @@ const Button = styled.a`
     transform: scale(1.05);
   }
 `
-export { Container, Image, Button }
+const PositionContainer = styled.div`
+  position: relative;
+  width: 100%;
+  height: 40rem;
+`
+
+const PositionedImage = styled.img`
+  position: absolute;
+  height: auto;
+`
+
+const DivData = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin: 2rem 0;
+`
+
+const DivLagoinha = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+
+  p,
+  strong {
+    font-style: italic;
+    font-size: 3rem;
+  }
+`
+
+export {
+  Container,
+  Image,
+  Button,
+  PositionContainer,
+  PositionedImage,
+  DivData,
+  DivLagoinha,
+}
