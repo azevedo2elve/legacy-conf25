@@ -1,12 +1,13 @@
 import Nav from './components/Nav'
 import Hero from './components/Hero/Hero'
+import About from './components/About'
 
 import styled from 'styled-components'
 import { GlobalStyle } from './styles/GlobalStyle'
 
 const Container = styled.div`
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
   height: 100vh;
 `
@@ -24,7 +25,7 @@ function App() {
       <Nav />
       <Hero />
       <Container>
-        <Title>LEGACY CONF25</Title>
+        <About />
       </Container>
     </>
   )

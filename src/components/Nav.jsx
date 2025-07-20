@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 // images
 import logo from '../assets/logo/Logo-conf.png'
-import lagoinhaCanoas from '../assets/logo/lagoinha-canoas.svg'
+import lagoinhaCanoas from '../assets/logo/logo-lagoinha-conf.png'
 
 const NavBar = styled.nav`
   position: fixed;
@@ -22,7 +22,7 @@ const NavBar = styled.nav`
 `
 
 const Logo = styled.img`
-  height: 4rem;
+  height: 3.5rem;
 `
 
 const NavDiv = styled.div`
@@ -37,7 +37,7 @@ const NavDiv = styled.div`
 
 const NavItem = styled.a`
   text-decoration: none;
-  color: ${({ theme }) => theme.colors.textLight};
+  color: #3f25b8;
   font-size: 1.2rem;
   transition: all 0.2s ease;
 
@@ -57,7 +57,13 @@ const Nav = () => {
         <NavItem href="#faq">FAQ</NavItem>
         <NavItem href="#contato">CONTATO</NavItem>
       </NavDiv>
-      <Logo src={lagoinhaCanoas} alt="Logo Lagoinha Canoas" />
+      <Logo
+        src={lagoinhaCanoas}
+        alt="Logo Lagoinha Canoas"
+        style={{
+          height: '2.5rem',
+        }}
+      />
     </NavBar>
   )
 }

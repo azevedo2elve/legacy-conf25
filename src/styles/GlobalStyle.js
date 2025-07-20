@@ -11,6 +11,8 @@ export const GlobalStyle = createGlobalStyle`
 
   body {
     background: ${({ theme }) => theme.colors.backgroundGradient};
+    background-attachment: fixed;
+    background-size: cover;
     color: white;
     min-height: 100vh;
   }
