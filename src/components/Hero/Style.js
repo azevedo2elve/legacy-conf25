@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-import Backgroud from '../../assets/hero/Fundo-1200x780.png'
+import Backgroud from '../../assets/hero/Fundo-1200x780_rasgado.png'
 
 const Container = styled.section`
   width: 100%;
@@ -11,7 +11,9 @@ const Container = styled.section`
   align-items: center;
   justify-content: center;
   background-image: url(${Backgroud});
-  background-size: cover;
+  background-size: 100% 100%;
+  background-position: center;
+  background-repeat: no-repeat;
   text-align: center;
   position: relative;
 `
@@ -25,14 +27,14 @@ const Image = styled.img`
 const Button = styled.a`
   display: flex;
   align-items: center;
-  margin: 5rem 0;
+  margin: 2rem 0;
   padding: 0.75rem 1.5rem;
   background: ${({ theme }) => theme.colors.greenButton};
   border-radius: 5rem;
   font-weight: 600;
   color: ${({ theme }) => theme.colors.accentBlue};
   text-decoration: none;
-  font-size: 3rem;
+  font-size: 2rem;
   box-shadow: 0 0 1rem rgba(0, 0, 0, 0.2);
   transition: transform 0.2s ease;
   padding: 1rem 2rem;

@@ -9,7 +9,7 @@ const DivAbout = styled.div`
   padding: 2rem;
   background-color: ${({ theme }) => theme.colors.backgroundLight};
   border-radius: 1rem;
-  margin: 30rem 0;
+  margin: 10rem 0;
   max-width: 90rem;
 `
 
@@ -31,7 +31,7 @@ const TextAbout = styled.p`
 
 const About = () => {
   return (
-    <DivAbout>
+    <DivAbout id="sobre">
       <TitleAbout>SOBRE A CONFERÊNCIA</TitleAbout>
       <TextAbout>
         <p>

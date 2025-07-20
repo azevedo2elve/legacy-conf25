@@ -20,7 +20,7 @@ import lagoinhaLogo from '../../assets/hero/lagoinha-canoas.png'
 
 const Hero = () => {
   return (
-    <Container>
+    <Container id="hero">
       <PositionContainer>
         <PositionedImage
           src={legacyImg}

@@ -1,7 +1,11 @@
+// components
 import Nav from './components/Nav'
 import Hero from './components/Hero/Hero'
 import About from './components/About'
+import Legacy from './components/Legacy'
+import FAQ from './components/FAQ'
 
+// styles
 import styled from 'styled-components'
 import { GlobalStyle } from './styles/GlobalStyle'
 
@@ -26,6 +30,8 @@ function App() {
       <Hero />
       <Container>
         <About />
+        <Legacy />
+        <FAQ />
       </Container>
     </>
   )

@@ -52,8 +52,9 @@ const Nav = () => {
     <NavBar>
       <Logo src={logo} alt="Logo Legacy" />
       <NavDiv>
-        <NavItem href="#home">HOME</NavItem>
+        <NavItem href="#hero">HOME</NavItem>
         <NavItem href="#sobre">SOBRE</NavItem>
+        <NavItem href="#legacy">LEGACY</NavItem>
         <NavItem href="#faq">FAQ</NavItem>
         <NavItem href="#contato">CONTATO</NavItem>
       </NavDiv>
