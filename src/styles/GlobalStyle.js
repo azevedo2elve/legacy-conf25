@@ -9,8 +9,15 @@ export const GlobalStyle = createGlobalStyle`
     font-size: 10px;
   }
 
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
   html {
     scroll-behavior: smooth;
+    overflow-x: hidden;
   }
 
   body {
@@ -20,6 +27,8 @@ export const GlobalStyle = createGlobalStyle`
     color: white;
     min-height: 100vh;
     position: relative;
+    overflow-x: hidden;
+    width: 100%;
   }
 
   body::before {
@@ -27,8 +36,8 @@ export const GlobalStyle = createGlobalStyle`
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
     background-image:
       radial-gradient(circle at center, rgba(255, 255, 255, .2) 1.1px, transparent 1px);
     background-size: 5px 5px;
@@ -44,7 +53,7 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   h2 {
-    color: ${({ theme }) => theme.colors.primary};
+    color: ${({ theme }) => theme.colors.textLight};
     font-size: 5.5rem;
     margin-bottom: 1rem;
     letter-spacing: 1.1rem;
