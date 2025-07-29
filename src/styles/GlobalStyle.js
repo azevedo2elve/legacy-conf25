@@ -34,7 +34,7 @@ export const GlobalStyle = createGlobalStyle`
     background-size: 5px 5px;
     background-position: 0 0;
     pointer-events: none;
-    z-index: 1;
+    z-index: -1;
     opacity: 0.3;
   }
 
