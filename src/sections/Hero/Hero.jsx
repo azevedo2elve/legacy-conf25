@@ -1,3 +1,5 @@
+import { useState, useEffect } from 'react'
+
 // Imagens
 import legacyImg from '../../assets/hero/Legacy.png'
 import estadualImg from '../../assets/hero/Estadual-fundo.png'
@@ -25,19 +27,30 @@ import {
 } from './Style'
 
 const Hero = () => {
+  const [isVisible, setIsVisible] = useState(false)
+
+  useEffect(() => {
+    // Trigger da animação após um pequeno delay
+    const timer = setTimeout(() => {
+      setIsVisible(true)
+    }, 100)
+
+    return () => clearTimeout(timer)
+  }, [])
+
   return (
     <Container id="hero">
       <PositionContainer id="images">
-        <LegacyImage src={legacyImg} alt="LEGACY" />
-        <EstadualImage src={estadualImg} alt="ESTADUAL (RS)" />
-        <ConfImage src={confImg} alt="CONF" />
-        <NumberImage src={number25Img} alt="25" />
+        <LegacyImage src={legacyImg} alt="LEGACY" isVisible={isVisible} />
+        <EstadualImage src={estadualImg} alt="ESTADUAL (RS)" isVisible={isVisible} />
+        <ConfImage src={confImg} alt="CONF" isVisible={isVisible} />
+        <NumberImage src={number25Img} alt="25" isVisible={isVisible} />
       </PositionContainer>
 
       <DivData>
-        <NumberDayImage src={number13Img} alt="13" />
-        <LineImage src={lineImg} alt="line" />
-        <MonthImage src={setImg} alt="SET" />
+        <NumberDayImage src={number13Img} alt="13" isVisible={isVisible} />
+        <LineImage src={lineImg} alt="line" isVisible={isVisible} />
+        <MonthImage src={setImg} alt="SET" isVisible={isVisible} />
       </DivData>
       <DivLagoinha>
         <LagoinhaLogoImage src={lagoinhaLogo} alt="Lagoinha Canoas" />

@@ -51,69 +51,78 @@ export const Image = styled.img`
   }
 `
 
-export const NumberDayImage = styled.img`
+export const NumberDayImage = styled.img.withConfig({
+  shouldForwardProp: (prop) => !['isVisible'].includes(prop),
+})`
   max-width: 5rem;
   height: auto;
   margin: 0.5rem 0;
+  transform: ${props => props.isVisible ? 'translateY(0) scale(1)' : 'translateY(20px) scale(0.8)'};
+  opacity: ${props => props.isVisible ? '1' : '0'};
+  transition: all 0.6s ease-out;
+  transition-delay: 1.0s;
 
-  /* Tablet */
   @media (max-width: 1024px) {
     max-width: 4.5rem;
   }
 
-  /* Mobile */
   @media (max-width: 768px) {
     max-width: 4rem;
     margin: 0.3rem 0;
   }
 
-  /* Mobile pequeno */
   @media (max-width: 480px) {
     max-width: 3.5rem;
     margin: 0.2rem 0;
   }
 `
 
-export const LineImage = styled.img`
+export const LineImage = styled.img.withConfig({
+  shouldForwardProp: (prop) => !['isVisible'].includes(prop),
+})`
   max-width: 40rem;
   height: auto;
   margin: 0.5rem 0;
+  transform: ${props => props.isVisible ? 'scaleX(1)' : 'scaleX(0)'};
+  opacity: ${props => props.isVisible ? '1' : '0'};
+  transition: all 0.8s ease-out;
+  transition-delay: 1.2s;
 
-  /* Tablet */
   @media (max-width: 1024px) {
     max-width: 35rem;
   }
 
-  /* Mobile */
   @media (max-width: 768px) {
     max-width: 25rem;
     margin: 0.3rem 0;
   }
 
-  /* Mobile pequeno */
   @media (max-width: 480px) {
     max-width: 20rem;
     margin: 0.2rem 0;
   }
 `
 
-export const MonthImage = styled.img`
+export const MonthImage = styled.img.withConfig({
+  shouldForwardProp: (prop) => !['isVisible'].includes(prop),
+})`
   max-width: 10rem;
   height: auto;
   margin: 0.5rem 0;
+  transform: ${props => props.isVisible ? 'translateY(0) scale(1)' : 'translateY(20px) scale(0.8)'};
+  opacity: ${props => props.isVisible ? '1' : '0'};
+  transition: all 0.6s ease-out;
+  transition-delay: 1.4s;
 
-  /* Tablet */
   @media (max-width: 1024px) {
     max-width: 9rem;
   }
 
-  /* Mobile */
   @media (max-width: 768px) {
     max-width: 7rem;
     margin: 0.3rem 0;
   }
 
-  /* Mobile pequeno */
   @media (max-width: 480px) {
     max-width: 6rem;
     margin: 0.2rem 0;
@@ -125,19 +134,16 @@ export const LagoinhaLogoImage = styled.img`
   height: auto;
   margin-right: 1rem;
 
-  /* Tablet */
   @media (max-width: 1024px) {
     max-width: 3.5rem;
     margin-right: 0.8rem;
   }
 
-  /* Mobile */
   @media (max-width: 768px) {
     max-width: 3rem;
     margin-right: 0.5rem;
   }
 
-  /* Mobile pequeno */
   @media (max-width: 480px) {
     max-width: 2.5rem;
     margin-right: 0.3rem;
@@ -185,17 +191,14 @@ export const PositionContainer = styled.div`
   width: 80%;
   height: 40rem;
 
-  /* Tablet */
   @media (max-width: 1024px) {
     height: 35rem;
   }
 
-  /* Mobile */
   @media (max-width: 768px) {
     height: 28rem;
   }
 
-  /* Mobile pequeno */
   @media (max-width: 480px) {
     height: 25rem;
   }
@@ -206,54 +209,58 @@ export const PositionedImage = styled.img`
   height: auto;
 `
 
-export const LegacyImage = styled(PositionedImage)`
+export const LegacyImage = styled(PositionedImage).withConfig({
+  shouldForwardProp: (prop) => !['isVisible'].includes(prop),
+})`
   top: 14%;
   left: 50%;
-  transform: translateX(-50%);
+  transform: translateX(-50%) ${props => props.isVisible ? 'translateY(0)' : 'translateY(-50px)'};
   max-width: 40rem;
   z-index: 3;
+  opacity: ${props => props.isVisible ? '1' : '0'};
+  transition: all 0.8s ease-out;
+  transition-delay: 0.2s;
 
-  /* Tablet */
   @media (max-width: 1024px) {
     max-width: 32rem;
     top: 12%;
   }
 
-  /* Mobile */
   @media (max-width: 768px) {
     max-width: 26rem;
     top: 10%;
   }
 
-  /* Mobile pequeno */
   @media (max-width: 480px) {
     max-width: 22rem;
     top: 10%;
   }
 `
 
-export const EstadualImage = styled(PositionedImage)`
+export const EstadualImage = styled(PositionedImage).withConfig({
+  shouldForwardProp: (prop) => !['isVisible'].includes(prop),
+})`
   top: 35%;
   left: 48%;
-  transform: translateX(-50%);
+  transform: translateX(-50%) ${props => props.isVisible ? 'translateY(0)' : 'translateY(50px)'};
   max-width: 35rem;
   z-index: 2;
+  opacity: ${props => props.isVisible ? '1' : '0'};
+  transition: all 0.8s ease-out;
+  transition-delay: 0.4s;
 
-  /* Tablet */
   @media (max-width: 1024px) {
     max-width: 30rem;
     top: 31%;
     left: 49%;
   }
 
-  /* Mobile */
   @media (max-width: 768px) {
     max-width: 25rem;
     top: 30%;
     left: 50%;
   }
 
-  /* Mobile pequeno */
   @media (max-width: 480px) {
     max-width: 20rem;
     top: 28%;
@@ -261,84 +268,87 @@ export const EstadualImage = styled(PositionedImage)`
   }
 `
 
-export const ConfImage = styled(PositionedImage)`
+export const ConfImage = styled(PositionedImage).withConfig({
+  shouldForwardProp: (prop) => !['isVisible'].includes(prop),
+})`
   top: 43%;
   left: 50%;
-  transform: translateX(-50%);
+  transform: translateX(-50%) ${props => props.isVisible ? 'translateY(0) scale(1)' : 'translateY(0) scale(0.8)'};
   max-width: 35rem;
+  opacity: ${props => props.isVisible ? '1' : '0'};
+  transition: all 0.8s ease-out;
+  transition-delay: 0.6s;
 
-  /* Tablet */
   @media (max-width: 1024px) {
     max-width: 30rem;
     top: 41%;
   }
 
-  /* Mobile */
   @media (max-width: 768px) {
     max-width: 25rem;
     top: 38%;
   }
 
-  /* Mobile pequeno */
   @media (max-width: 480px) {
     max-width: 20rem;
     top: 36%;
   }
 `
 
-export const NumberImage = styled(PositionedImage)`
-  top: 67%;
-  left: 60%;
-  transform: translateX(-50%);
+export const NumberImage = styled(PositionedImage).withConfig({
+  shouldForwardProp: (prop) => !['isVisible'].includes(prop),
+})`
+  /* Base styles */
+  top: 66%;
+  left: 57%;
   max-width: 10rem;
+  transform: translateX(-50%) ${props => props.isVisible ? 'translateY(0) rotate(0deg)' : 'translateY(30px) rotate(-10deg)'};
+  opacity: ${props => props.isVisible ? '1' : '0'};
+  transition: all 0.8s ease-out;
+  transition-delay: 0.8s;
 
-  @media (max-width: 2320px) {
-    left: 62%;
-  }
+  /* Ultra-wide screens (4K+) */
+  @media (max-width: 3360px) { left: 58%; }
+  @media (max-width: 2900px) { left: 60%; }
+  @media (max-width: 2330px) { left: 62%; }
 
-  @media (max-width: 1990px) {
-    left: 65%;
-  }
+  /* Large desktop screens */
+  @media (max-width: 1980px) { left: 63%; }
+  @media (max-width: 1950px) { left: 65%; }
+  @media (max-width: 1690px) { left: 66%; }
+  @media (max-width: 1500px) { left: 67%; }
+  @media (max-width: 1480px) { left: 68%; }
+  @media (max-width: 1320px) { left: 69%; }
+  @media (max-width: 1310px) { left: 70%; }
+  @media (max-width: 1190px) { left: 72%; }
+  @media (max-width: 1080px) { left: 74%; }
 
-  @media (max-width: 1600px) {
-    left: 68%;
-  }
-
-  @media (max-width: 1355px) {
-    left: 70%;
-  }
-
-  @media (max-width: 1165px) {
-    left: 72%;
-  }
-
-  /* Tablet */
+  /* Standard desktop and tablets */
   @media (max-width: 1024px) {
+    left: 73%;
     max-width: 8rem;
-    top: 66%;
+    top: 65%;
   }
 
-  @media (max-width: 880px) {
-    left: 76%;
-  }
+  @media (max-width: 872px) { left: 78%; }
 
-  /* Mobile */
   @media (max-width: 768px) {
+    left: 75%;
     max-width: 6rem;
     top: 65%;
-    left: 83%;
   }
 
-  /* Mobile pequeno */
+  @media (max-width: 675px) { left: 77%; }
+  @media (max-width: 620px) { left: 83%; }
+
+  /* Mobile devices */
   @media (max-width: 480px) {
+    left: 85%;
     max-width: 5rem;
     top: 60%;
-    left: 85%;
   }
 
-  @media (max-width: 380px) {
-    left: 96%;
-  }
+  @media (max-width: 360px) { left: 94%; }
 `
 
 export const DivData = styled.div`
@@ -348,14 +358,12 @@ export const DivData = styled.div`
   gap: 1rem;
   margin: 2rem 0;
 
-  /* Mobile */
   @media (max-width: 768px) {
     gap: 0.5rem;
     margin: 1.5rem 0;
     flex-wrap: wrap;
   }
 
-  /* Mobile pequeno */
   @media (max-width: 480px) {
     gap: 0.3rem;
     margin: 1rem 0;
@@ -374,7 +382,6 @@ export const DivLagoinha = styled.div`
     font-size: 3rem;
   }
 
-  /* Tablet */
   @media (max-width: 1024px) {
     p,
     strong {
@@ -382,7 +389,6 @@ export const DivLagoinha = styled.div`
     }
   }
 
-  /* Mobile */
   @media (max-width: 768px) {
     p,
     strong {
@@ -391,7 +397,6 @@ export const DivLagoinha = styled.div`
     gap: 0.3rem;
   }
 
-  /* Mobile pequeno */
   @media (max-width: 480px) {
     p,
     strong {
