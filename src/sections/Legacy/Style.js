@@ -1,20 +1,9 @@
-import { useState, useRef, useEffect } from 'react'
-import styled from 'styled-components'
+import styled from 'styled-components';
 
 // imagens
-import iphoneMockup from '../assets/legacy/iphone_mockup.png'
-import backgroundLegacy from '../assets/legacy/fundo_legacy.png'
+import backgroundLegacy from '../../assets/legacy/fundo_legacy.png'
 
-// vídeos
-import video1 from '../assets/legacy/videos/anuncio_conf.mp4'
-import video2 from '../assets/legacy/videos/video1.mp4'
-import video3 from '../assets/legacy/videos/video3.mp4'
-import video4 from '../assets/legacy/videos/video2.mp4'
-import video5 from '../assets/legacy/videos/legacy_link_bio.mp4'
-
-const videos = [video1, video2, video3, video4, video5]
-
-const StoryWrapper = styled.section`
+export const StoryWrapper = styled.section`
   width: 100%;
   min-height: 80vh;
   background-image: url(${backgroundLegacy});
@@ -48,7 +37,7 @@ const StoryWrapper = styled.section`
   }
 `
 
-const TitleLegacy = styled.h2`
+export const TitleLegacy = styled.h2`
   letter-spacing: 1.1rem;
 
   @media (max-width: 768px) {
@@ -56,7 +45,7 @@ const TitleLegacy = styled.h2`
   }
 `
 
-const MockupWrapper = styled.div`
+export const MockupWrapper = styled.div`
   position: relative;
   height: 54rem;
   width: 25rem;
@@ -78,7 +67,7 @@ const MockupWrapper = styled.div`
   }
 `
 
-const Mockup = styled.img`
+export const Mockup = styled.img`
   position: absolute;
   top: 0;
   left: 50%;
@@ -88,7 +77,7 @@ const Mockup = styled.img`
   z-index: 3;
 `
 
-const VideoContainer = styled.div`
+export const VideoContainer = styled.div`
   position: absolute;
   top: 2%;
   left: 5%;
@@ -101,10 +90,14 @@ const VideoContainer = styled.div`
     height: 100%;
     object-fit: cover;
     border-radius: 2.8rem;
+
+    @media (max-width: 768px) {
+      border-radius: 1.8rem;
+    }
   }
 `
 
-const NavigationArrow = styled.button`
+export const NavigationArrow = styled.button`
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -142,7 +135,7 @@ const NavigationArrow = styled.button`
   }
 `
 
-const LeftArrow = styled(NavigationArrow)`
+export const LeftArrow = styled(NavigationArrow)`
   left: -3.5rem;
 
   @media (max-width: 1024px) {
@@ -158,7 +151,7 @@ const LeftArrow = styled(NavigationArrow)`
   }
 `
 
-const RightArrow = styled(NavigationArrow)`
+export const RightArrow = styled(NavigationArrow)`
   right: -3.5rem;
 
   @media (max-width: 1024px) {
@@ -174,13 +167,13 @@ const RightArrow = styled(NavigationArrow)`
   }
 `
 
-const ArrowIcon = styled.div`
+export const ArrowIcon = styled.div`
   width: 0;
   height: 0;
   transition: all 0.3s ease;
 `
 
-const LeftArrowIcon = styled(ArrowIcon)`
+export const LeftArrowIcon = styled(ArrowIcon)`
   border-right: 0.6rem solid white;
   border-top: 0.4rem solid transparent;
   border-bottom: 0.4rem solid transparent;
@@ -199,7 +192,7 @@ const LeftArrowIcon = styled(ArrowIcon)`
   }
 `
 
-const RightArrowIcon = styled(ArrowIcon)`
+export const RightArrowIcon = styled(ArrowIcon)`
   border-left: 0.6rem solid white;
   border-top: 0.4rem solid transparent;
   border-bottom: 0.4rem solid transparent;
@@ -218,7 +211,7 @@ const RightArrowIcon = styled(ArrowIcon)`
   }
 `
 
-const AudioButton = styled.button`
+export const AudioButton = styled.button`
   position: absolute;
   bottom: 1rem;
   right: 1rem;
@@ -261,100 +254,3 @@ const AudioButton = styled.button`
     font-size: 0.7rem;
   }
 `
-
-const Legacy = () => {
-  const [index, setIndex] = useState(0)
-  const [isMuted, setIsMuted] = useState(true)
-  const videoRef = useRef(null)
-  const containerRef = useRef(null)
-
-  const handleNext = () => {
-    setIndex((prev) => (prev + 1) % videos.length)
-  }
-
-  const handlePrev = () => {
-    setIndex((prev) => (prev - 1 + videos.length) % videos.length)
-  }
-
-  const toggleMute = () => {
-    setIsMuted(!isMuted)
-    if (videoRef.current) {
-      videoRef.current.muted = !isMuted
-    }
-  }
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (videoRef.current) {
-          if (entry.isIntersecting) {
-            videoRef.current.volume = 0.5
-            videoRef.current.muted = isMuted
-            videoRef.current.play().catch((error) => {
-              console.log('Autoplay prevented:', error)
-            })
-          } else {
-            videoRef.current.pause()
-          }
-        }
-      },
-      {
-        threshold: 0.5,
-        rootMargin: '100px'
-      }
-    )
-
-    if (containerRef.current) {
-      observer.observe(containerRef.current)
-    }
-
-    return () => {
-      if (containerRef.current) {
-        observer.unobserve(containerRef.current)
-      }
-    }
-  }, [index, isMuted])
-
-  useEffect(() => {
-    if (videoRef.current) {
-      videoRef.current.volume = 0.5
-      videoRef.current.muted = isMuted
-    }
-  }, [index, isMuted])
-
-  return (
-    <StoryWrapper id="legacy">
-      <TitleLegacy>WE ARE LEGACY</TitleLegacy>
-
-      <MockupWrapper ref={containerRef}>
-        <VideoContainer>
-          <video
-            key={videos[index]}
-            ref={videoRef}
-            controls={false}
-            autoPlay
-            muted={isMuted}
-            playsInline
-            onEnded={handleNext}
-          >
-            <source src={videos[index]} type="video/mp4" />
-          </video>
-        </VideoContainer>
-        <Mockup src={iphoneMockup} alt="iPhone Mockup" />
-        
-        <LeftArrow onClick={handlePrev}>
-          <LeftArrowIcon />
-        </LeftArrow>
-        <RightArrow onClick={handleNext}>
-          <RightArrowIcon />
-        </RightArrow>
-        
-        <AudioButton onClick={toggleMute}>
-          {isMuted ? '🔇' : '🔊'}
-        </AudioButton>
-      </MockupWrapper>
-    </StoryWrapper>
-  )
-}
-
-export default Legacy
