@@ -1,3 +1,4 @@
+import React from 'react'
 import styled from 'styled-components'
 
 const SectionWrapper = styled.section`
@@ -34,8 +35,10 @@ const SectionWrapper = styled.section`
   }
 `
 
-const Section = ({ children, id }) => {
-  return <SectionWrapper id={id}>{children}</SectionWrapper>
-}
+const Section = React.forwardRef(({ children, id, className }, ref) => {
+  return <SectionWrapper id={id} className={className} ref={ref}>{children}</SectionWrapper>
+})
+
+Section.displayName = 'Section'
 
 export default Section

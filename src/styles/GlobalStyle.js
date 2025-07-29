@@ -44,7 +44,7 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   h2 {
-    color: ${({ theme }) => theme.colors.textLight};
+    color: ${({ theme }) => theme.colors.primary};
     font-size: 5.5rem;
     margin-bottom: 1rem;
     letter-spacing: 1.1rem;

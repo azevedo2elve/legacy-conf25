@@ -3,7 +3,7 @@ export const theme = {
     backgroundMain: '#8000D6',
     backgroundGradient: 'linear-gradient(360deg, #db4f2f, #ba4bc1, #3f25b8)',
 
-    textLight: '#FFFFF',
+    primary: '#FFFFFF',
     textDark: '#111111',
 
     // paleta de cores
