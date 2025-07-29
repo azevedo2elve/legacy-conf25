@@ -104,25 +104,167 @@ const VideoContainer = styled.div`
   }
 `
 
-const ClickZone = styled.div`
+const NavigationArrow = styled.button`
   position: absolute;
-  top: 0;
-  bottom: 0;
-  width: 50%;
-  z-index: 3;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  width: 2.5rem;
+  height: 2.5rem;
   cursor: pointer;
+  z-index: 4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(5px);
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.25);
+    border-color: rgba(255, 255, 255, 0.5);
+    transform: translateY(-50%) scale(1.1);
+  }
+
+  &:active {
+    transform: translateY(-50%) scale(0.95);
+  }
+
+  @media (max-width: 768px) {
+    width: 2rem;
+    height: 2rem;
+  }
+
+  @media (max-width: 480px) {
+    width: 1.8rem;
+    height: 1.8rem;
+  }
 `
 
-const LeftZone = styled(ClickZone)`
-  left: 0;
+const LeftArrow = styled(NavigationArrow)`
+  left: -3.5rem;
+
+  @media (max-width: 1024px) {
+    left: -2.8rem;
+  }
+
+  @media (max-width: 768px) {
+    left: -2.2rem;
+  }
+
+  @media (max-width: 480px) {
+    left: -2rem;
+  }
 `
 
-const RightZone = styled(ClickZone)`
-  right: 0;
+const RightArrow = styled(NavigationArrow)`
+  right: -3.5rem;
+
+  @media (max-width: 1024px) {
+    right: -2.8rem;
+  }
+
+  @media (max-width: 768px) {
+    right: -2.2rem;
+  }
+
+  @media (max-width: 480px) {
+    right: -2rem;
+  }
+`
+
+const ArrowIcon = styled.div`
+  width: 0;
+  height: 0;
+  transition: all 0.3s ease;
+`
+
+const LeftArrowIcon = styled(ArrowIcon)`
+  border-right: 0.6rem solid white;
+  border-top: 0.4rem solid transparent;
+  border-bottom: 0.4rem solid transparent;
+  margin-right: 0.1rem;
+
+  @media (max-width: 768px) {
+    border-right: 0.5rem solid white;
+    border-top: 0.3rem solid transparent;
+    border-bottom: 0.3rem solid transparent;
+  }
+
+  @media (max-width: 480px) {
+    border-right: 0.4rem solid white;
+    border-top: 0.25rem solid transparent;
+    border-bottom: 0.25rem solid transparent;
+  }
+`
+
+const RightArrowIcon = styled(ArrowIcon)`
+  border-left: 0.6rem solid white;
+  border-top: 0.4rem solid transparent;
+  border-bottom: 0.4rem solid transparent;
+  margin-left: 0.1rem;
+
+  @media (max-width: 768px) {
+    border-left: 0.5rem solid white;
+    border-top: 0.3rem solid transparent;
+    border-bottom: 0.3rem solid transparent;
+  }
+
+  @media (max-width: 480px) {
+    border-left: 0.4rem solid white;
+    border-top: 0.25rem solid transparent;
+    border-bottom: 0.25rem solid transparent;
+  }
+`
+
+const AudioButton = styled.button`
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+  background: rgba(0, 0, 0, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  width: 2.5rem;
+  height: 2.5rem;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  z-index: 4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(5px);
+
+  &:hover {
+    background: rgba(0, 0, 0, 0.9);
+    border-color: rgba(255, 255, 255, 0.5);
+    transform: scale(1.1);
+  }
+
+  &:active {
+    transform: scale(0.95);
+  }
+
+  @media (max-width: 768px) {
+    width: 2rem;
+    height: 2rem;
+    bottom: 0.5rem;
+    right: 0.5rem;
+    font-size: 0.8rem;
+  }
+
+  @media (max-width: 480px) {
+    width: 1.8rem;
+    height: 1.8rem;
+    font-size: 0.7rem;
+  }
 `
 
 const Legacy = () => {
   const [index, setIndex] = useState(0)
+  const [isMuted, setIsMuted] = useState(true)
   const videoRef = useRef(null)
   const containerRef = useRef(null)
 
@@ -134,19 +276,31 @@ const Legacy = () => {
     setIndex((prev) => (prev - 1 + videos.length) % videos.length)
   }
 
+  const toggleMute = () => {
+    setIsMuted(!isMuted)
+    if (videoRef.current) {
+      videoRef.current.muted = !isMuted
+    }
+  }
+
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (videoRef.current) {
           if (entry.isIntersecting) {
-            videoRef.current.play().catch(() => {})
+            videoRef.current.volume = 0.5
+            videoRef.current.muted = isMuted
+            videoRef.current.play().catch((error) => {
+              console.log('Autoplay prevented:', error)
+            })
           } else {
             videoRef.current.pause()
           }
         }
       },
       {
-        threshold: 0.7,
+        threshold: 0.5,
+        rootMargin: '100px'
       }
     )
 
@@ -159,7 +313,14 @@ const Legacy = () => {
         observer.unobserve(containerRef.current)
       }
     }
-  }, [index])
+  }, [index, isMuted])
+
+  useEffect(() => {
+    if (videoRef.current) {
+      videoRef.current.volume = 0.5
+      videoRef.current.muted = isMuted
+    }
+  }, [index, isMuted])
 
   return (
     <StoryWrapper id="legacy">
@@ -171,16 +332,27 @@ const Legacy = () => {
             key={videos[index]}
             ref={videoRef}
             controls={false}
+            autoPlay
+            muted={isMuted}
+            playsInline
             onEnded={handleNext}
           >
             <source src={videos[index]} type="video/mp4" />
           </video>
         </VideoContainer>
         <Mockup src={iphoneMockup} alt="iPhone Mockup" />
+        
+        <LeftArrow onClick={handlePrev}>
+          <LeftArrowIcon />
+        </LeftArrow>
+        <RightArrow onClick={handleNext}>
+          <RightArrowIcon />
+        </RightArrow>
+        
+        <AudioButton onClick={toggleMute}>
+          {isMuted ? '🔇' : '🔊'}
+        </AudioButton>
       </MockupWrapper>
-
-      <LeftZone onClick={handlePrev} />
-      <RightZone onClick={handleNext} />
     </StoryWrapper>
   )
 }
