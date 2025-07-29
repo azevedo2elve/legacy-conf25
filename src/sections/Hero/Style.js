@@ -207,7 +207,7 @@ export const PositionedImage = styled.img`
 `
 
 export const LegacyImage = styled(PositionedImage)`
-  top: 15%;
+  top: 14%;
   left: 50%;
   transform: translateX(-50%);
   max-width: 40rem;
@@ -215,19 +215,19 @@ export const LegacyImage = styled(PositionedImage)`
 
   /* Tablet */
   @media (max-width: 1024px) {
-    max-width: 35rem;
-    top: 15%;
+    max-width: 32rem;
+    top: 12%;
   }
 
   /* Mobile */
   @media (max-width: 768px) {
-    max-width: 30rem;
-    top: 12%;
+    max-width: 26rem;
+    top: 10%;
   }
 
   /* Mobile pequeno */
   @media (max-width: 480px) {
-    max-width: 25rem;
+    max-width: 22rem;
     top: 10%;
   }
 `
@@ -242,7 +242,7 @@ export const EstadualImage = styled(PositionedImage)`
   /* Tablet */
   @media (max-width: 1024px) {
     max-width: 30rem;
-    top: 33%;
+    top: 31%;
     left: 49%;
   }
 
@@ -288,9 +288,13 @@ export const ConfImage = styled(PositionedImage)`
 
 export const NumberImage = styled(PositionedImage)`
   top: 67%;
-  left: 62%;
+  left: 60%;
   transform: translateX(-50%);
   max-width: 10rem;
+
+  @media (max-width: 2320px) {
+    left: 62%;
+  }
 
   @media (max-width: 1990px) {
     left: 65%;
@@ -321,15 +325,19 @@ export const NumberImage = styled(PositionedImage)`
   /* Mobile */
   @media (max-width: 768px) {
     max-width: 6rem;
-    top: 62%;
-    left: 72%;
+    top: 65%;
+    left: 83%;
   }
 
   /* Mobile pequeno */
   @media (max-width: 480px) {
     max-width: 5rem;
     top: 60%;
-    left: 58%;
+    left: 85%;
+  }
+
+  @media (max-width: 380px) {
+    left: 96%;
   }
 `
 
