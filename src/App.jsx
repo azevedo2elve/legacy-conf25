@@ -1,9 +1,11 @@
 // components
-import Nav from './components/Nav'
-import Hero from './components/Hero/Hero'
-import About from './components/About'
-import Legacy from './components/Legacy'
-import FAQ from './components/FAQ'
+import Nav from './sections/Nav'
+import Hero from './sections/Hero/Hero'
+import About from './sections/About'
+import Legacy from './sections/Legacy'
+import FAQ from './sections/FAQ'
+import Contato from './sections/Contato'
+import Footer from './sections/Footer'
 
 // styles
 import styled from 'styled-components'
@@ -13,13 +15,7 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 100vh;
-`
-
-const Title = styled.h1`
-  color: ${({ theme }) => theme.colors.textLight};
-  font-size: 3rem;
-  font-weight: bold;
+  min-height: 100vh;
 `
 
 function App() {
@@ -28,11 +24,13 @@ function App() {
       <GlobalStyle />
       <Nav />
       <Hero />
-      <Container>
+      <Container id="container">
         <About />
         <Legacy />
         <FAQ />
+        <Contato />
       </Container>
+      <Footer />
     </>
   )
 }

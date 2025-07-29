@@ -9,16 +9,64 @@ export const GlobalStyle = createGlobalStyle`
     font-size: 10px;
   }
 
+  html {
+    scroll-behavior: smooth;
+  }
+
   body {
     background: ${({ theme }) => theme.colors.backgroundGradient};
     background-attachment: fixed;
     background-size: cover;
     color: white;
     min-height: 100vh;
+    position: relative;
+  }
+
+  body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image:
+      radial-gradient(circle at center, rgba(255, 255, 255, .2) 1.1px, transparent 1px);
+    background-size: 5px 5px;
+    background-position: 0 0;
+    pointer-events: none;
+    z-index: 1;
+    opacity: 0.3;
   }
 
   a {
     color: inherit;
     text-decoration: none;
+  }
+
+  h2 {
+    color: ${({ theme }) => theme.colors.textLight};
+    font-size: 5.5rem;
+    margin-bottom: 1rem;
+    letter-spacing: 1.1rem;
+    text-align: center;
+
+    
+    @media (max-width: 1024px) {
+      font-size: 4.5rem;
+      letter-spacing: 0.8rem;
+    }
+
+    
+    @media (max-width: 768px) {
+      font-size: 3.5rem;
+      letter-spacing: 0.5rem;
+      margin-bottom: 2rem;
+    }
+
+    
+    @media (max-width: 480px) {
+      font-size: 2.8rem;
+      letter-spacing: 0.3rem;
+    }
   }
 `
