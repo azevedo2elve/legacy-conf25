@@ -164,7 +164,7 @@ const FAQ = () => {
     {
       question: 'Para qual faixa etária é a conferência?',
       answer:
-        '<p>A LEGACY CONF25 é direcionada especialmente para jovens a partir dos 18 anos, mas todos são bem-vindos! Adolescentes e pessoas mais velhas também podem participar — dizemos que o LEGACY é "dos 8 aos 80"! É uma conferência geracional, feita para quem tem sede de Deus.</p>',
+        '<p>A LEGACY CONF25 é direcionada especialmente para jovens a partir dos 18 anos, mas todos são bem-vindos!</p>',
     },
     {
       question: 'Como faço para adquirir um ingresso?',
