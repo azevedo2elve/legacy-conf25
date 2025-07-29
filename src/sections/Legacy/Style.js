@@ -218,8 +218,8 @@ export const AudioButton = styled.button`
   background: rgba(0, 0, 0, 0.7);
   border: 1px solid rgba(255, 255, 255, 0.3);
   border-radius: 50%;
-  width: 2.5rem;
-  height: 2.5rem;
+  width: 3.5rem;
+  height: 3.5rem;
   color: white;
   font-size: 1rem;
   cursor: pointer;
