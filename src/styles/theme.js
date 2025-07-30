@@ -6,12 +6,11 @@ export const theme = {
     primary: '#FFFFFF',
     textDark: '#111111',
 
-    // paleta de cores
     accentOrange: '#db4f2f',
     accentPink: '#ba4bc1',
     accentBlue: '#080253',
 
-    greenButton: '#62D900', // Button Garanta seu ingresso
+    greenButton: '#62D900',
     highlightYellow: '#E3B435',
 
     overlay: 'rgba(0, 0, 0, 0.4)',

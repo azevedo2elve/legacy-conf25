@@ -52,9 +52,7 @@ const Legacy = () => {
         if (videoRef.current) {
           if (entry.isIntersecting) {
             videoRef.current.volume = 0.3
-            videoRef.current.play().catch(() => {
-              // Autoplay prevented - silent fail
-            })
+            videoRef.current.play()
           } else {
             videoRef.current.pause()
           }

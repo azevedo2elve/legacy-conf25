@@ -33,7 +33,6 @@ const About = () => {
   const sectionRef = useRef(null)
 
   useEffect(() => {
-    // Fallback: ativar animação após 2 segundos se o observer não funcionar
     const fallbackTimer = setTimeout(() => {
       if (!isVisible) {
         setIsVisible(true)
@@ -50,8 +49,8 @@ const About = () => {
         }
       },
       {
-        threshold: 0.1, // Reduzido para 10% para trigger mais cedo
-        rootMargin: '0px 0px -20px 0px' // Margem menor
+        threshold: 0.1,
+        rootMargin: '0px 0px -20px 0px'
       }
     )
 

@@ -111,11 +111,9 @@ const FAQ = () => {
   const sectionRef = useRef(null)
 
   useEffect(() => {
-    // Fallback: ativar animação após 2 segundos se o observer não funcionar
     const fallbackTimer = setTimeout(() => {
       if (!isVisible) {
         setIsVisible(true)
-        // Ativar todos os itens gradualmente
         faqList.forEach((_, index) => {
           setTimeout(() => {
             setVisibleItems(prev => [...prev, index])
@@ -130,11 +128,10 @@ const FAQ = () => {
           setIsVisible(true)
           clearTimeout(fallbackTimer)
           
-          // Ativar itens um por um com delay
           faqList.forEach((_, index) => {
             setTimeout(() => {
               setVisibleItems(prev => [...prev, index])
-            }, (index + 1) * 200) // +1 para começar depois do título
+            }, (index + 1) * 200)
           })
         }
       },

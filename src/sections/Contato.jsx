@@ -179,7 +179,6 @@ function Contato() {
   const sectionRef = useRef(null)
 
   useEffect(() => {
-    // Fallback: ativar animação após 2 segundos se o observer não funcionar
     const fallbackTimer = setTimeout(() => {
       if (!isVisible) {
         setIsVisible(true)

@@ -30,7 +30,6 @@ const Hero = () => {
   const [isVisible, setIsVisible] = useState(false)
 
   useEffect(() => {
-    // Trigger da animação após um pequeno delay
     const timer = setTimeout(() => {
       setIsVisible(true)
     }, 100)
