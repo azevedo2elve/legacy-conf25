@@ -153,7 +153,7 @@ export const LagoinhaLogoImage = styled.img`
 export const Button = styled.a`
   display: flex;
   align-items: center;
-  margin: 2rem 0;
+  margin-top: 4rem;
   padding: 1rem 2rem;
   background: ${({ theme }) => theme.colors.linearGradient};
   border-radius: 5rem;
