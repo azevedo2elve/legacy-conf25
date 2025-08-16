@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 // images
 import logo from '../assets/logo/logo-legacy.png'
-import lagoinhaCanoas from '../assets/logo/logo-lagoinha-conf.png'
+import lagoinhaCanoas from '../assets/logo/lagoinha-canoas-branco.png'
 
 const NavBar = styled.nav`
   position: fixed;
