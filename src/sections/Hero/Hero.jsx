@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 
 // Imagens
 import legacyImg from '../../assets/hero/Legacy.png'
-import estadualImg from '../../assets/hero/Estadual-fundo.png'
+import estadualImg from '../../assets/hero/Barra-estadual.png'
 import confImg from '../../assets/hero/Conf.png'
 import number25Img from '../../assets/hero/25.png'
 import number13Img from '../../assets/hero/13.png'
@@ -43,7 +43,7 @@ const Hero = () => {
         <LegacyImage src={legacyImg} alt="LEGACY" isVisible={isVisible} />
         <EstadualImage src={estadualImg} alt="ESTADUAL (RS)" isVisible={isVisible} />
         <ConfImage src={confImg} alt="CONF" isVisible={isVisible} />
-        <NumberImage src={number25Img} alt="25" isVisible={isVisible} />
+        {/* <NumberImage src={number25Img} alt="25" isVisible={isVisible} /> */}
       </PositionContainer>
 
       <DivData>

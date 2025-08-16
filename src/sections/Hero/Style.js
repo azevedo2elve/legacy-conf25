@@ -155,13 +155,14 @@ export const Button = styled.a`
   align-items: center;
   margin: 2rem 0;
   padding: 1rem 2rem;
-  background: ${({ theme }) => theme.colors.greenButton};
+  background: ${({ theme }) => theme.colors.linearGradient};
   border-radius: 5rem;
-  font-weight: 600;
-  color: ${({ theme }) => theme.colors.accentBlue};
+  border: 4px solid white;
+  font-weight: 400;
+  color: ${({ theme }) => theme.colors.primary};
   text-decoration: none;
   font-size: 2rem;
-  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 2rem rgba(0, 0, 0, 0.6);
   transition: transform 0.2s ease;
 
   &:hover {

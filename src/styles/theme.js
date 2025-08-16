@@ -1,10 +1,13 @@
 export const theme = {
   colors: {
     backgroundMain: '#8000D6',
-    backgroundGradient: 'linear-gradient(180deg, #3745c8, #16171d, #a0499b, #e35016, #df380b)',
+    linearGradient: 'linear-gradient(140deg, #3745c8, #16171d, #a0499b, #e35016, #df380b)',
+    // #3745c8, #16171d, #a0499b, #e35016, #df380b
 
     primary: '#FFFFFF',
-    textDark: '#111111',
+    dark: '#111111', 
+
+    blueDark: '#16171d',
 
     accentOrange: '#db4f2f',
     accentPink: '#ba4bc1',
