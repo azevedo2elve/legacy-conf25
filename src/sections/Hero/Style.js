@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import Backgroud from '../../assets/hero/Fundo-1200x780_rasgado.png'
+import Backgroud from '../../assets/hero/Fundo-new-hero.png'
 
 export const Container = styled.section`
   width: 100%;

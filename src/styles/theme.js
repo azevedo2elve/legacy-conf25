@@ -1,7 +1,7 @@
 export const theme = {
   colors: {
     backgroundMain: '#8000D6',
-    backgroundGradient: 'linear-gradient(360deg, #db4f2f, #ba4bc1, #3f25b8)',
+    backgroundGradient: 'linear-gradient(180deg, #3745c8, #16171d, #a0499b, #e35016, #df380b)',
 
     primary: '#FFFFFF',
     textDark: '#111111',
