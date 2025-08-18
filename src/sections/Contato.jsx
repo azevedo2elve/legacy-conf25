@@ -36,7 +36,6 @@ const SocialDescription = styled.p.withConfig({
 
   @media (max-width: 768px) {
     font-size: 1.4rem;
-    padding: 0 2rem;
   }
 `
 

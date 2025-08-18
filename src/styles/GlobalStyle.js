@@ -74,7 +74,7 @@ export const GlobalStyle = createGlobalStyle`
 
     
     @media (max-width: 480px) {
-      font-size: 2.8rem;
+      font-size: 2.4rem;
       letter-spacing: 0.3rem;
     }
   }
