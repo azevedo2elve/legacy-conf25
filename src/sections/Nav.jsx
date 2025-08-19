@@ -1,8 +1,8 @@
 import styled from 'styled-components'
 
 // images
-import logo from '../assets/logo/Logo-conf.png'
-import lagoinhaCanoas from '../assets/logo/logo-lagoinha-conf.png'
+import logo from '../assets/logo/logo-legacy.png'
+import lagoinhaCanoas from '../assets/logo/lagoinha-canoas-branco.png'
 
 const NavBar = styled.nav`
   position: fixed;
@@ -11,7 +11,7 @@ const NavBar = styled.nav`
   transform: translateX(-50%);
   height: 6rem;
   padding: 1rem 2rem;
-  background-color: ${({ theme }) => theme.colors.highlightYellow};
+  background-color: #df380b;
   border-radius: 5rem;
   display: flex;
   align-items: center;
@@ -65,8 +65,8 @@ const NavDiv = styled.div`
   height: 100%;
   gap: 1.5rem;
   padding: 0 2rem;
-  border-left: 0.2rem solid #3f25b8;
-  border-right: 0.2rem solid #3f25b8;
+  border-left: 0.2rem solid #fff;
+  border-right: 0.2rem solid #fff;
 
   @media (max-width: 1024px) {
     gap: 1.2rem;
@@ -76,8 +76,8 @@ const NavDiv = styled.div`
   @media (max-width: 768px) {
     gap: 0.8rem;
     padding: 0 1rem;
-    border-left: 0.15rem solid #3f25b8;
-    border-right: 0.15rem solid #3f25b8;
+    border-left: 0.15rem solid #fff;
+    border-right: 0.15rem solid #fff;
   }
 
   @media (max-width: 480px) {
@@ -88,7 +88,7 @@ const NavDiv = styled.div`
 
 const NavItem = styled.a`
   text-decoration: none;
-  color: #3f25b8;
+  color: #fff;
   font-size: 1.2rem;
   transition: all 0.2s ease;
   white-space: nowrap;

@@ -21,7 +21,7 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   body {
-    background: ${({ theme }) => theme.colors.backgroundGradient};
+    background: ${({ theme }) => theme.colors.linearGradient};
     background-attachment: fixed;
     background-size: cover;
     color: white;
@@ -74,7 +74,7 @@ export const GlobalStyle = createGlobalStyle`
 
     
     @media (max-width: 480px) {
-      font-size: 2.8rem;
+      font-size: 2.4rem;
       letter-spacing: 0.3rem;
     }
   }

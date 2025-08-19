@@ -1,14 +1,14 @@
 import styled from 'styled-components'
-import Backgroud from '../../assets/hero/Fundo-1200x780_rasgado.png'
+import Backgroud from '../../assets/hero/Fundo-new-hero.png'
 
 export const Container = styled.section`
+  padding-top: 8rem;
   width: 100%;
   min-height: 100vh;
-  padding-top: 8rem;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: end;
   background-image: url(${Backgroud});
   background-size: 100% 100%;
   background-position: center;
@@ -21,6 +21,7 @@ export const Container = styled.section`
   @media (max-width: 1024px) {
     padding-top: 6rem;
     background-size: cover;
+    justify-content: center;
   }
 
   @media (max-width: 768px) {
@@ -153,16 +154,21 @@ export const LagoinhaLogoImage = styled.img`
 export const Button = styled.a`
   display: flex;
   align-items: center;
-  margin: 2rem 0;
-  padding: 1rem 2rem;
-  background: ${({ theme }) => theme.colors.greenButton};
-  border-radius: 5rem;
-  font-weight: 600;
-  color: ${({ theme }) => theme.colors.accentBlue};
-  text-decoration: none;
+  justify-content: center;
+  gap: 1.5rem;
+  background: ${({ theme }) => theme.colors.linearGradient};
+  padding: 2rem 4rem;
+  border-radius: 2rem;
+  color: white;
+  border: 2px solid white;
   font-size: 2rem;
-  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.2);
+  font-weight: bold;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.3);
   transition: transform 0.2s ease;
+
+  margin: 4rem 0;
 
   &:hover {
     transform: scale(1.05);
