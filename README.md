@@ -4,7 +4,7 @@ Landing page desenvolvida para a Conferência Legacy 2025 da Igreja Lagoinha do 
 
 ## 🚀 Demo
 
-Acesse o projeto em HML: [https://legacy-conf25.vercel.app/](https://legacy-conf25.vercel.app/)
+Acesse o projeto em HML: [https://legacy-conf25.vercel.app/](https://legacy-conf25.vercel.app/) </br>
 Projeto em PRD: [https://legacycanoas.com.br](https://legacycanoas.com.br)
 
 ## 🛠️ Tecnologias Utilizadas
