@@ -1,12 +1,44 @@
-# React + Vite
+# Legacy Conf 2025 - Rio Grande do Sul
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Landing page desenvolvida para a Conferência Legacy 2025 da Igreja Lagoinha do Rio Grande do Sul.
 
-Currently, two official plugins are available:
+## 🚀 Demo
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Acesse o projeto em HML: [https://legacy-conf25.vercel.app/](https://legacy-conf25.vercel.app/)
+Projeto em PRD: [https://legacycanoas.com.br](https://legacycanoas.com.br)
 
-## Expanding the ESLint configuration
+## 🛠️ Tecnologias Utilizadas
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- **React** 19.1.0 - Biblioteca JavaScript para construção de interfaces
+- **Vite** 7.0.0 - Build tool e bundler para desenvolvimento rápido
+- **Styled Components** 6.1.19 - CSS-in-JS para estilização
+- **Lucide React** 0.525.0 - Biblioteca de ícones
+- **ESLint** - Ferramenta de linting para qualidade de código
+- **Prettier** - Formatador de código
+
+## 🎯 Sobre o Projeto
+
+Esta landing page foi criada para divulgar e promover a Conferência Legacy 2025, evento da Igreja Lagoinha no Rio Grande do Sul. O projeto apresenta informações sobre o evento, programação, palestrantes e facilita o processo de inscrição.
+
+## 🚀 Como executar
+
+```bash
+# Clone o repositório
+git clone https://github.com/azevedo2elve/legacy-conf25.git
+
+# Entre no diretório
+cd legacy-conf25
+
+# Instale as dependências
+npm install
+
+# Execute o projeto em desenvolvimento
+npm run dev
+```
+
+## 📦 Scripts Disponíveis
+
+- `npm run dev` - Inicia o servidor de desenvolvimento
+- `npm run build` - Gera a build de produção
+- `npm run preview` - Visualiza a build de produção localmente
+- `npm run lint` - Executa o linting do código
